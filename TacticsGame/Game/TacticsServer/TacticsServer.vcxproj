@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Util\ErrorLogger.cpp" />
+    <ClCompile Include="..\..\Util\FileUtil.cpp" />
+    <ClCompile Include="..\..\Util\MathUtil.cpp" />
+    <ClCompile Include="..\..\Util\NetUtil.cpp" />
+    <ClCompile Include="..\..\Util\SyncUtil.cpp" />
+    <ClCompile Include="..\..\Util\WindowsUtil.cpp" />
+    <ClCompile Include="..\BattleCommon\Entity\EMRequestHandler.cpp" />
+    <ClCompile Include="..\BattleCommon\Entity\Entity.cpp" />
+    <ClCompile Include="..\BattleCommon\Entity\EntityController.cpp" />
+    <ClCompile Include="..\BattleCommon\Entity\EntityManager.cpp" />
+    <ClCompile Include="..\BattleCommon\Entity\PudEntity\PudEntity.cpp" />
+    <ClCompile Include="..\BattleCommon\Entity\PudEntity\PudEntityController.cpp" />
+    <ClCompile Include="..\BattleCommon\Landscape\GridUnit.cpp" />
+    <ClCompile Include="..\BattleCommon\Landscape\Landscape.cpp" />
+    <ClCompile Include="..\BattleCommon\Landscape\LandscapeController.cpp" />
+    <ClCompile Include="..\BattleCommon\Landscape\LandscapeGenerator.cpp" />
+    <ClCompile Include="..\BattleCommon\Net\BattleConnection.cpp" />
+    <ClCompile Include="..\BattleCommon\Net\BattleGateway.cpp" />
+    <ClCompile Include="..\BattleCommon\Net\MessageManager.cpp" />
+    <ClCompile Include="..\BattleCommon\Net\Message\AddEntityMessage.cpp" />
+    <ClCompile Include="..\BattleCommon\Net\Message\ChangeEntityPositionMessage.cpp" />
+    <ClCompile Include="..\BattleCommon\Net\Message\Message.cpp" />
+    <ClCompile Include="..\BattleCommon\Net\Message\PingMessage.cpp" />
+    <ClCompile Include="Battle\Entity\ServerEMRequestHandler.cpp" />
+    <ClCompile Include="Core\BattleInstance.cpp" />
+    <ClCompile Include="Net\ServerBattleGateway.cpp" />
+    <ClCompile Include="Net\ServerMessageManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Inc\TacticsErrors.h" />
+    <ClInclude Include="..\..\Inc\WinsockWrapper.h" />
+    <ClInclude Include="..\..\Util\ErrorLogger.h" />
+    <ClInclude Include="..\..\Util\FileUtil.h" />
+    <ClInclude Include="..\..\Util\MathUtil.h" />
+    <ClInclude Include="..\..\Util\NetUtil.h" />
+    <ClInclude Include="..\..\Util\SyncUtil.h" />
+    <ClInclude Include="..\..\Util\WindowsUtil.h" />
+    <ClInclude Include="..\BattleCommon\Entity\EMRequestHandler.h" />
+    <ClInclude Include="..\BattleCommon\Entity\Entity.h" />
+    <ClInclude Include="..\BattleCommon\Entity\EntityController.h" />
+    <ClInclude Include="..\BattleCommon\Entity\EntityManager.h" />
+    <ClInclude Include="..\BattleCommon\Entity\PudEntity\PudEntity.h" />
+    <ClInclude Include="..\BattleCommon\Entity\PudEntity\PudEntityController.h" />
+    <ClInclude Include="..\BattleCommon\Landscape\GridUnit.h" />
+    <ClInclude Include="..\BattleCommon\Landscape\Landscape.h" />
+    <ClInclude Include="..\BattleCommon\Landscape\LandscapeController.h" />
+    <ClInclude Include="..\BattleCommon\Landscape\LandscapeGenerator.h" />
+    <ClInclude Include="..\BattleCommon\Net\BattleConnection.h" />
+    <ClInclude Include="..\BattleCommon\Net\BattleGateway.h" />
+    <ClInclude Include="..\BattleCommon\Net\MessageManager.h" />
+    <ClInclude Include="..\BattleCommon\Net\Message\AddEntityMessage.h" />
+    <ClInclude Include="..\BattleCommon\Net\Message\ChangeEntityPositionMessage.h" />
+    <ClInclude Include="..\BattleCommon\Net\Message\Message.h" />
+    <ClInclude Include="..\BattleCommon\Net\Message\PingMessage.h" />
+    <ClInclude Include="..\BattleCommon\Net\Parcel.h" />
+    <ClInclude Include="Battle\Entity\ServerEMRequestHandler.h" />
+    <ClInclude Include="Core\BattleInstance.h" />
+    <ClInclude Include="Net\ServerBattleGateway.h" />
+    <ClInclude Include="Net\ServerMessageManager.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0A2F86EF-8CA2-40E1-8766-B497E412FDA7}</ProjectGuid>
+    <RootNamespace>TacticsServer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Util;..\..\Inc;.\BattleCommon;..\BattleCommon\Entity;..\BattleCommon\Landscape;..\BattleCommon\Net;..\BattleCommon\Net\Message;.\Battle\Entity;.\Core;.\Net;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\Util;..\..\Inc;.\BattleCommon;..\BattleCommon\Entity;..\BattleCommon\Landscape;..\BattleCommon\Net;.\BattleCommon\Net\Message;.\Battle\Entity;.\Core;.\Net;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Battle">
+      <UniqueIdentifier>{7d018e8b-cf21-44a5-aac9-b954971b59cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Battle\Landscape">
+      <UniqueIdentifier>{087939a2-d852-463d-95ea-667c1baf2679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Battle">
+      <UniqueIdentifier>{72df60b5-c7a9-45b7-8856-5774e85316e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Battle\Landscape">
+      <UniqueIdentifier>{744833fd-c312-4f6c-8b08-a5a2f05dc86c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Battle\Entity">
+      <UniqueIdentifier>{2b55e2ca-86c5-49b0-80d9-350c1481b708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{032d35b5-634e-4adf-acc3-e410c04ba4c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{8c3c88e8-a5c0-498d-8056-825eff9cf277}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Inc">
+      <UniqueIdentifier>{58b74c75-ae06-40e5-8cd0-ae588edb8e50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{13b90ae5-ab57-4f85-af95-8d791d04ccf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{cb2245e5-0279-4c87-8e09-d5bb75a4e5ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Battle\Entity">
+      <UniqueIdentifier>{20e047ab-9767-46dc-b64b-717b5b78ef56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Battle\Entity\PudEntity">
+      <UniqueIdentifier>{a4e32e0b-c962-40bf-8175-23bdd48c4b0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Battle\Entity\PudEntity">
+      <UniqueIdentifier>{918545cf-b95a-4ff8-b2c9-fcfedb00f3d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Net">
+      <UniqueIdentifier>{7d7adac0-5434-42b6-9cdf-1dc503f29632}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Net">
+      <UniqueIdentifier>{2b2cc4bf-acb5-426f-b18d-a833e7126a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Net\Message">
+      <UniqueIdentifier>{90b90aed-a766-440c-aac0-0ad0c9f95f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Net\Message">
+      <UniqueIdentifier>{4073c505-424b-43cf-9ef6-7e2c22430410}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\BattleCommon\Landscape\GridUnit.cpp">
+      <Filter>Source Files\Battle\Landscape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Landscape\LandscapeGenerator.cpp">
+      <Filter>Source Files\Battle\Landscape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Landscape\Landscape.cpp">
+      <Filter>Source Files\Battle\Landscape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Landscape\LandscapeController.cpp">
+      <Filter>Source Files\Battle\Landscape</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\BattleInstance.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Util\SyncUtil.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Entity\EntityManager.cpp">
+      <Filter>Source Files\Battle\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Entity\Entity.cpp">
+      <Filter>Source Files\Battle\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Entity\EntityController.cpp">
+      <Filter>Source Files\Battle\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Entity\PudEntity\PudEntityController.cpp">
+      <Filter>Source Files\Battle\Entity\PudEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Entity\PudEntity\PudEntity.cpp">
+      <Filter>Source Files\Battle\Entity\PudEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Entity\EMRequestHandler.cpp">
+      <Filter>Source Files\Battle\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Battle\Entity\ServerEMRequestHandler.cpp">
+      <Filter>Source Files\Battle\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Util\MathUtil.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\ServerBattleGateway.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Util\WindowsUtil.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Util\NetUtil.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Net\BattleGateway.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Net\MessageManager.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Net\Message\Message.cpp">
+      <Filter>Source Files\Net\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Net\Message\PingMessage.cpp">
+      <Filter>Source Files\Net\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Net\BattleConnection.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Util\ErrorLogger.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Util\FileUtil.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Net\Message\AddEntityMessage.cpp">
+      <Filter>Source Files\Net\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Net\Message\ChangeEntityPositionMessage.cpp">
+      <Filter>Source Files\Net\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\ServerMessageManager.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BattleCommon\Landscape\GridUnit.h">
+      <Filter>Header Files\Battle\Landscape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Landscape\LandscapeGenerator.h">
+      <Filter>Header Files\Battle\Landscape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Landscape\Landscape.h">
+      <Filter>Header Files\Battle\Landscape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Landscape\LandscapeController.h">
+      <Filter>Header Files\Battle\Landscape</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\BattleInstance.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\TacticsErrors.h">
+      <Filter>Header Files\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Util\SyncUtil.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Entity\EntityManager.h">
+      <Filter>Header Files\Battle\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Entity\Entity.h">
+      <Filter>Header Files\Battle\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Entity\EntityController.h">
+      <Filter>Header Files\Battle\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Entity\PudEntity\PudEntity.h">
+      <Filter>Header Files\Battle\Entity\PudEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Entity\PudEntity\PudEntityController.h">
+      <Filter>Header Files\Battle\Entity\PudEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Entity\EMRequestHandler.h">
+      <Filter>Header Files\Battle\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Battle\Entity\ServerEMRequestHandler.h">
+      <Filter>Header Files\Battle\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Util\MathUtil.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\ServerBattleGateway.h">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Util\WindowsUtil.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Util\NetUtil.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Net\BattleGateway.h">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\WinsockWrapper.h">
+      <Filter>Header Files\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Net\MessageManager.h">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Net\Message\Message.h">
+      <Filter>Header Files\Net\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Net\Message\PingMessage.h">
+      <Filter>Header Files\Net\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Net\BattleConnection.h">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Util\ErrorLogger.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Util\FileUtil.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Net\Parcel.h">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Net\Message\AddEntityMessage.h">
+      <Filter>Header Files\Net\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BattleCommon\Net\Message\ChangeEntityPositionMessage.h">
+      <Filter>Header Files\Net\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\ServerMessageManager.h">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
