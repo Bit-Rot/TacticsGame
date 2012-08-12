@@ -116,7 +116,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>..\..\Util;..\..\Inc;.\BattleCommon;..\BattleCommon\Entity;..\BattleCommon\Landscape;..\BattleCommon\Net;.\BattleCommon\Net\Message;.\Battle\Entity;.\Core;.\Net;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Util;..\..\Inc;.\BattleCommon;..\BattleCommon\Entity;..\BattleCommon\Landscape;..\BattleCommon\Net;..\BattleCommon\Net\Message;.\Battle\Entity;.\Core;.\Net;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

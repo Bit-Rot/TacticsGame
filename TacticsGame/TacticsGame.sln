@@ -5,6 +5,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TacticsClient", "Game\Tacti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TacticsServer", "Game\TacticsServer\TacticsServer.vcxproj", "{0A2F86EF-8CA2-40E1-8766-B497E412FDA7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test\Test.vcxproj", "{EE888C52-2F78-4A06-9521-371FF3FAB71E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FE4ECCDE-F2F4-47D7-AD69-86A7F750ED63} = {FE4ECCDE-F2F4-47D7-AD69-86A7F750ED63}
+		{0A2F86EF-8CA2-40E1-8766-B497E412FDA7} = {0A2F86EF-8CA2-40E1-8766-B497E412FDA7}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +25,10 @@ Global
 		{0A2F86EF-8CA2-40E1-8766-B497E412FDA7}.Debug|Win32.Build.0 = Debug|Win32
 		{0A2F86EF-8CA2-40E1-8766-B497E412FDA7}.Release|Win32.ActiveCfg = Release|Win32
 		{0A2F86EF-8CA2-40E1-8766-B497E412FDA7}.Release|Win32.Build.0 = Release|Win32
+		{EE888C52-2F78-4A06-9521-371FF3FAB71E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EE888C52-2F78-4A06-9521-371FF3FAB71E}.Debug|Win32.Build.0 = Debug|Win32
+		{EE888C52-2F78-4A06-9521-371FF3FAB71E}.Release|Win32.ActiveCfg = Release|Win32
+		{EE888C52-2F78-4A06-9521-371FF3FAB71E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
