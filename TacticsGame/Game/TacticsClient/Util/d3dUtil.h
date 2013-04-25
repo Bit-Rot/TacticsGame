@@ -37,6 +37,7 @@
 //*****************************************************************************
 
 //TODO: Look into improving HR() macro to 'return' the HRESULT input, o/w define a new inline function for this.
+//I think if we just put 'hr' on the last line of this macro it should effectively 'return' the value.
 #if defined(DEBUG) | defined(_DEBUG)
 	#ifndef HR
 	#define HR(x)                                              \

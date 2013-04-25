@@ -16,7 +16,21 @@ public:
 	static void destroyInstance();
 	virtual ReturnCode init();
 	virtual void deinit();
+	
+	/**
+	 *	@brief Send the given parcel over the network to a specific client
+	 *	
+	 *	@param [IN] objParcel - the parcel to send to the server
+	 */
 	ReturnCode broadcastParcel(Parcel &objParcel);
+
+	//TODO: Implement this method and add parameters to allow distinction of correct client to send to.
+	/**
+	 *	@brief Send the given parcel over the network to a specific client
+	 *	
+	 *	@param [IN] objParcel - the parcel to send to the server
+	 */
+	//ReturnCode sendParcel(const Parcel &objParcel);
 
 protected:
 	//Owned Properties

@@ -37,6 +37,7 @@ ReturnCode BattleGameState::init(const TacticsGame &objGame)
 	//Create our ViewManager
 	ID3D10Device* pobjDevice = objGame.getDevice();
 	RET_RC_IF_FAILED(BattleViewManager::getInstance()->init(pobjDevice, m_objCamera), RC_ERR_GENERAL);
+	BattleViewManager::getInstance()->calculateWvpMatrix(objGame.getClientWidth(), objGame.getClientHeight());
 
 	//Generate our landscape randomly
 	RET_RC_IF_FAILED(LandscapeGenerator::getInstance()->GenerateTestLandscape(m_pobjLandscape), RC_ERR_GENERAL);
@@ -62,8 +63,6 @@ ReturnCode BattleGameState::init(const TacticsGame &objGame)
 	RET_RC_IF_FAILED(m_pobjLandscape->getGridUnit(0, 0, pobjGridUnit), RC_ERR_GENERAL);
 	pobjPudEntity->setGridUnit(pobjGridUnit);
 	RET_RC_IF_FAILED(pobjGridUnit->addEntity((Entity*)pobjPudEntity), RC_ERR_GENERAL);
-
-	//Create PudEntityControl
 	
 	//Create PudEntityView
 	PudEntityView* pobjPudEntityView = new PudEntityView();

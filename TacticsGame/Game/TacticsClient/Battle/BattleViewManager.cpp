@@ -117,7 +117,6 @@ ReturnCode BattleViewManager::draw()
 	ReturnCode rc = RC_OK;
 	for(UINT i=0; i < objTechDesc.Passes; ++i)
 	{
-
 		//Calculate and set the view/projection matrix for the landscape
 		//Note that we don't worry about the world-transform since Landscape should be static at origin
 		m_pobjWvpVar->SetMatrix((float*)&mViewProjMatrix);
@@ -157,16 +156,7 @@ ReturnCode BattleViewManager::draw()
 
 void BattleViewManager::onResize(int iClientWidth, int iClientHeight)
 {
-	//Determine aspect ratio
-	float aspect = (float)iClientWidth/iClientHeight;
-
-	//Pull camera properties
-	float fFovY = m_pobjCamera->getFovY();
-	float fNear = m_pobjCamera->getNearPlane();
-	float fFar = m_pobjCamera->getFarPlane();
-
-	//Calculate projection matrix
-	D3DXMatrixPerspectiveFovLH(&m_mProj, fFovY, aspect, fNear, fFar);
+	calculateWvpMatrix(iClientWidth, iClientHeight);
 }
 
 void BattleViewManager::restoreDefaultStates()
@@ -196,4 +186,18 @@ ReturnCode BattleViewManager::removeEntityView(EntityView* pobjEntityView)
 	m_pobjEntityViewSet.erase(pobjEntityView);
 	CS.leave();
 	return RC_OK;
+}
+
+void BattleViewManager::calculateWvpMatrix(int iClientWidth, int iClientHeight) {
+
+	//Determine aspect ratio
+	float aspect = (float)iClientWidth/iClientHeight;
+
+	//Pull camera properties
+	float fFovY = m_pobjCamera->getFovY();
+	float fNear = m_pobjCamera->getNearPlane();
+	float fFar = m_pobjCamera->getFarPlane();
+
+	//Calculate projection matrix
+	D3DXMatrixPerspectiveFovLH(&m_mProj, fFovY, aspect, fNear, fFar);
 }

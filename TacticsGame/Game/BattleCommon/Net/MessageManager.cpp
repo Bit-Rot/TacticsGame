@@ -33,7 +33,6 @@ ReturnCode MessageManager::extractMessageFromParcel(const Parcel &objparcel, Mes
 	return RC_OK;
 }
 
-//TODO: Finish @return comment
 ReturnCode MessageManager::packMessageIntoParcel(const Message &objMessage, Parcel &objParcel)
 {
 	//Clear output

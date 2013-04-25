@@ -130,10 +130,10 @@ DWORD WINAPI ServerBattleGateway::IOCPIncomingThreadStub(LPVOID lpParam)
  *	scenarios:
  *	
  *	<ul>
- *	<li>One parcel is sent in one packet</li>
- *	<li>One parcel is sent across multiple packets</li>
- *	<li>One packet contains pieces of multiple packet</li>
- *	<li>The received packet does not contain enough bytes to determine the size of the parcel</li>
+ *		<li>One parcel is sent in one packet</li>
+ *		<li>One parcel is sent across multiple packets</li>
+ *		<li>One packet contains pieces of multiple parcels</li>
+ *		<li>The received packet does not contain enough bytes to determine the size of the parcel</li>
  *	</ul>
  *	
  *	The <pre>IOCPIncomingThread</pre> method handles the first two scenarios by 1) determining the parcel size, 2)
@@ -153,8 +153,8 @@ DWORD WINAPI ServerBattleGateway::IOCPIncomingThreadStub(LPVOID lpParam)
  *	
  *	TODO: Currently the project's error handling isn't well developed, and it is quite apparent in this method.  Special attention
  *	should be paid to updating this function once logging and other error handling methods are introduced.  Additionally, a lot of 
- *	work can be done to improve the robustness of this function to account for corrupt or malformed packets, but for now, handling
- *	the above scenarios is sufficient.
+ *	work can be done to improve the robustness of this function to account for corrupt, malformed or missing packets, but for now, 
+ *	handling the above scenarios is sufficient.
  */
 DWORD ServerBattleGateway::IOCPIncomingThread(LPVOID lpParam)
 {
@@ -384,17 +384,33 @@ ReturnCode ServerBattleGateway::AcceptConnection()
 //TODO: Implement this function with actual Parcel objects
 ReturnCode ServerBattleGateway::broadcastParcel(Parcel &objParcel)
 {
-	return RC_ERR_NOT_IMPLEMENTED;
+	//Make sure we're initialized
+	if(!m_bIsInitialized)
+		return RC_ERR_INVALID_STATE;
 
-	/*
+	//Convert the parcel to a parcel buffer
+	char* pcParcelBuffer = NULL;
+	RET_RC_IF_FAILED(BattleGateway::createParcelBuffer(objParcel, pcParcelBuffer), RC_ERR_GENERAL);
+
+	//TEST CODE
 	CS.enter();
 	typeConnectionVecIterator iter;
 	for(iter = m_pobjConnectionVec.begin(); iter != m_pobjConnectionVec.end(); ++iter)
 	{
+		iter->getSocket()
+
 		PostQueuedCompletionStatus(m_hOutgoingPort, 0, (ULONG_PTR)*iter, (LPOVERLAPPED)cMessage);
 	}
 	CS.leave();
 
-	return RC_OK;
-	*/
+	//Send the message to the server
+	ReturnCode rc = RC_OK;
+	if(SOCKET_ERROR == send(m_hServerSocket, pcParcelBuffer, objParcel.size, 0))
+		rc = RC_ERR_GENERAL;
+
+	//Free memory allocated to buffer
+	delete [] pcParcelBuffer;
+	pcParcelBuffer = NULL;
+
+	return rc;
 }

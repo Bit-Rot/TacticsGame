@@ -1,5 +1,6 @@
 #include "ServerMessagemanager.h"
 #include "BattleGateway.h"
+#include "ServerBattleGateway.h"
 
 ServerMessageManager* ServerMessageManager::s_instance = NULL;
 
@@ -29,24 +30,16 @@ ServerMessageManager::~ServerMessageManager()
 
 }
 
-//TODO: Finish @return comment
 ReturnCode ServerMessageManager::sendMessage(Message &objMessage)
 {
 	//Create and zero out a parcel
 	Parcel objParcel;
-	ZeroMemory(&objParcel, sizeof(objParcel));
+	RET_RC_IF_FAILED(packMessageIntoParcel(objMessage, objParcel), RC_ERR_GENERAL);
 
-	//Fill in the parcel with message information
-	RET_RC_IF_FAILED(objMessage.getMessageBuffer(&(objParcel.message_buff), objParcel.message_size), RC_ERR_GENERAL);
-	objParcel.message_type = objMessage.getClassId();
+	//Send the parcel through the client gateway
+	ReturnCode rc = RC_OK;
+	if(RC_FAILED(ServerBattleGateway::getInstance()->broadcastParcel(objParcel)))
+		rc = RC_ERR_GENERAL;
 
-	//Determine the size of the parcel
-	objParcel.size = sizeof(objParcel.size) + sizeof(objParcel.message_type) + sizeof(objParcel.message_size) + objParcel.message_size;
-
-	//send message via the appropriate gateway
-	char* pcParcelBuffer = NULL;
-	BattleGateway::createParcelBuffer(objParcel, pcParcelBuffer);
-
-
-	return RC_ERR_NOT_IMPLEMENTED;
+	return rc;
 }

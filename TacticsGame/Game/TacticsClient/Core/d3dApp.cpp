@@ -53,8 +53,8 @@ D3DApp::D3DApp(HINSTANCE hInstance)
 	mMainWndCaption = L"D3D10 Application";
 	md3dDriverType  = D3D10_DRIVER_TYPE_HARDWARE;
 	mClearColor     = D3DXCOLOR(0.0f, 0.0f, 1.0f, 1.0f);
-	mClientWidth    = 800;
-	mClientHeight   = 600;
+	m_iClientWidth    = 800;
+	m_iClientHeight   = 600;
 }
 
 D3DApp::~D3DApp()
@@ -141,7 +141,7 @@ void D3DApp::onResize()
 
 	// Resize the swap chain and recreate the render target view.
 
-	HR(mSwapChain->ResizeBuffers(1, mClientWidth, mClientHeight, DXGI_FORMAT_R8G8B8A8_UNORM, 0));
+	HR(mSwapChain->ResizeBuffers(1, m_iClientWidth, m_iClientHeight, DXGI_FORMAT_R8G8B8A8_UNORM, 0));
 	ID3D10Texture2D* backBuffer;
 	HR(mSwapChain->GetBuffer(0, __uuidof(ID3D10Texture2D), reinterpret_cast<void**>(&backBuffer)));
 	HR(md3dDevice->CreateRenderTargetView(backBuffer, 0, &mRenderTargetView));
@@ -151,8 +151,8 @@ void D3DApp::onResize()
 	// Create the depth/stencil buffer and view.
 	D3D10_TEXTURE2D_DESC depthStencilDesc;
 	
-	depthStencilDesc.Width     = mClientWidth;
-	depthStencilDesc.Height    = mClientHeight;
+	depthStencilDesc.Width     = m_iClientWidth;
+	depthStencilDesc.Height    = m_iClientHeight;
 	depthStencilDesc.MipLevels = 1;
 	depthStencilDesc.ArraySize = 1;
 	depthStencilDesc.Format    = DXGI_FORMAT_D24_UNORM_S8_UINT;
@@ -174,8 +174,8 @@ void D3DApp::onResize()
 	D3D10_VIEWPORT vp;
 	vp.TopLeftX = 0;
 	vp.TopLeftY = 0;
-	vp.Width    = mClientWidth;
-	vp.Height   = mClientHeight;
+	vp.Width    = m_iClientWidth;
+	vp.Height   = m_iClientHeight;
 	vp.MinDepth = 0.0f;
 	vp.MaxDepth = 1.0f;
 
@@ -239,8 +239,8 @@ LRESULT D3DApp::msgProc(UINT msg, WPARAM wParam, LPARAM lParam)
 	// WM_SIZE is sent when the user resizes the window.  
 	case WM_SIZE:
 		// Save the new client area dimensions.
-		mClientWidth  = LOWORD(lParam);
-		mClientHeight = HIWORD(lParam);
+		m_iClientWidth  = LOWORD(lParam);
+		m_iClientHeight = HIWORD(lParam);
 		if( md3dDevice )
 		{
 			if( wParam == SIZE_MINIMIZED )
@@ -352,7 +352,7 @@ void D3DApp::initMainWindow()
 	}
 
 	// Compute window rectangle dimensions based on requested client area dimensions.
-	RECT R = { 0, 0, mClientWidth, mClientHeight };
+	RECT R = { 0, 0, m_iClientWidth, m_iClientHeight };
     AdjustWindowRect(&R, WS_OVERLAPPEDWINDOW, false);
 	int width  = R.right - R.left;
 	int height = R.bottom - R.top;
@@ -374,8 +374,8 @@ void D3DApp::initDirect3D()
 	// Fill out a DXGI_SWAP_CHAIN_DESC to describe our swap chain.
 
 	DXGI_SWAP_CHAIN_DESC sd;
-	sd.BufferDesc.Width  = mClientWidth;
-	sd.BufferDesc.Height = mClientHeight;
+	sd.BufferDesc.Width  = m_iClientWidth;
+	sd.BufferDesc.Height = m_iClientHeight;
 	sd.BufferDesc.RefreshRate.Numerator = 60;
 	sd.BufferDesc.RefreshRate.Denominator = 1;
 	sd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
@@ -397,10 +397,12 @@ void D3DApp::initDirect3D()
 	// Create the device.
 
 	UINT createDeviceFlags = 0;
+//So apparently these next couple of lines crash the application.  I'll just leave these out -Andrew
+/*
 #if defined(DEBUG) || defined(_DEBUG)  
     createDeviceFlags |= D3D10_CREATE_DEVICE_DEBUG;
 #endif
-
+*/
 	/*
 	HR( D3D10CreateDeviceAndSwapChain(
 			0,                 //default adapter

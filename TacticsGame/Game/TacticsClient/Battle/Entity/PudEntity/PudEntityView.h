@@ -18,7 +18,7 @@ public:
 	virtual ReturnCode draw();
 	virtual ReturnCode getWorldMatrix(D3DXMATRIX &mWorld);
 
-	//TODO: Get rid of me once model is encapsulated in class
+	//TODO: Get rid of me once 3D model is encapsulated in class
 	void setStride(UINT uiStride){m_uiStride = uiStride;}
 	void setNumIndices(UINT uiNumIndices){m_uiNumIndices = uiNumIndices;}
 
@@ -26,7 +26,7 @@ public:
 	static ReturnCode buildViewForPudEntity(PudEntityView &objPudEntityView);
 
 protected:
-	//TODO: Get rid of me once model is encapsulated in class
+	//TODO: Get rid of me once 3D model is encapsulated in class
 	UINT m_uiStride;
 	UINT m_uiNumIndices;
 

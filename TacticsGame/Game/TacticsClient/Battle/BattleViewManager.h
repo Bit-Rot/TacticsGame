@@ -26,9 +26,9 @@ public:
 
 	//Public methods
 	ReturnCode init(ID3D10Device* &pobjDevice, const Camera &pobjCamera);
-
 	ReturnCode addEntityView(EntityView* pobjEntityView);
 	ReturnCode removeEntityView(EntityView* pobjEntityView);
+	void calculateWvpMatrix(int iClientWidth, int iClientHeight);
 	
 	//Getters/Setters
 	void setLandscapeView(LandscapeView* pobjLandscapeView){m_pobjLandscapeView = pobjLandscapeView;}

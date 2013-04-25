@@ -129,9 +129,6 @@
     <ClCompile Include="..\BattleCommon\Net\Message\PingMessage.cpp">
       <Filter>Source Files\Net\Message</Filter>
     </ClCompile>
-    <ClCompile Include="..\BattleCommon\Net\BattleConnection.cpp">
-      <Filter>Source Files\Net</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Util\ErrorLogger.cpp">
       <Filter>Source Files\Util</Filter>
     </ClCompile>
@@ -146,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="Net\ServerMessageManager.cpp">
       <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BattleCommon\Net\BattleConnection.cpp">
+      <Filter>Source Files\Net\Message</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -21,11 +21,15 @@
 class D3DApp
 {
 public:
+	//C'tor & D'tor
 	D3DApp(HINSTANCE hInstance);
 	virtual ~D3DApp();
 
+	//Getters / Setters
 	HINSTANCE getAppInst();
 	HWND      getMainWnd();
+	int getClientWidth() const {return m_iClientWidth;}
+	int getClientHeight() const {return m_iClientHeight;}
 
 	int run();
 
@@ -67,8 +71,8 @@ protected:
 	std::wstring mMainWndCaption;
 	D3D10_DRIVER_TYPE md3dDriverType;
 	D3DXCOLOR mClearColor;
-	int mClientWidth;
-	int mClientHeight;
+	int m_iClientWidth;
+	int m_iClientHeight;
 };
 
 

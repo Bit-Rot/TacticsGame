@@ -51,10 +51,6 @@ void TacticsGame::initApp()
 	m_pobjCurrentState = new BattleGameState();
 	m_pobjCurrentState->init(*this);
 
-	//TODO: Remove this SUPER HACKY fix to initialize the projection matrix before the first draw call()
-	if(m_pobjCurrentState)
-		m_pobjCurrentState->resize(mClientWidth, mClientHeight);
-
 	//Initialize Bidness!
 }
 
@@ -63,7 +59,7 @@ void TacticsGame::onResize()
 	D3DApp::onResize();
 
 	if(m_pobjCurrentState)
-		m_pobjCurrentState->resize(mClientWidth, mClientHeight);
+		m_pobjCurrentState->resize(m_iClientWidth, m_iClientHeight);
 	
 	//Resize Bidness!
 }
